@@ -1,3 +1,5 @@
+//problem 1
+
 function calculateMoney(ticketSale){
     const ticketPrice=120;
     const gateManCost=500;
@@ -9,8 +11,12 @@ function calculateMoney(ticketSale){
     }
     return resultOfIncome;
 }
-//const res=calculateMoney(1055);
-//console.log(res);
+const result=calculateMoney(1055);
+console.log("ticket base income:",result);
+
+
+//problem 2
+
 
 function checkName(takeName){
     
@@ -27,15 +33,18 @@ function checkName(takeName){
         return"Bad name";
     }
 }
-//const r=checkName("RAFEE");
-//console.log(r);
+const resultOfBadGoodName=checkName("RAFEE");
+console.log("result Of Bad or Good Name:",resultOfBadGoodName);
+
+
+// problem 03
+
 
 function deleteInvalids(arra){
     if(Array.isArray(arra)!==true){
-        return "invalid input"
+        return "invalid input give array"
     }
     let arr=[];
-    //let size=arra.length;
     for(const element of arra){
         if(typeof element==='number' && !Number.isNaN(element)){
            arr.push(element);
@@ -43,8 +52,12 @@ function deleteInvalids(arra){
     }
    return arr;
 }
-//const re=deleteInvalids([2,3,3,'ensaf',"rwew",78,NaN]);
-//console.log(re);
+const resultOfNumber=deleteInvalids([2,3,3,'ensaf',"rwew",78,NaN]);
+console.log("result Of Number:",resultOfNumber);
+
+
+//problem 04
+
 
 function password(passwordCreate){
    
@@ -55,39 +68,41 @@ function password(passwordCreate){
    }
    let lengths = String (passwordCreate.birthYear).length;
    if(lengths!==4){
-    return "invalid";
+    return "invalid birthday input ,you have to give 4 digit input";
    }
     
     
-    let res= passwordCreate.siteName.charAt(0).toUpperCase()+passwordCreate.siteName.slice(1)+"#"+passwordCreate.name+"@"+passwordCreate.birthYear;
+    let result= passwordCreate.siteName.charAt(0).toUpperCase()+passwordCreate.siteName.slice(1)+"#"+passwordCreate.name+"@"+passwordCreate.birthYear;
     
-    
-    return res;
+    // return passwordCreate.siteName.charAt(0).toUpperCase()+passwordCreate.siteName.slice(1)+"#"+passwordCreate.name+"@"+passwordCreate.birthYear;
+    return result;
 
 }
 const obj=
     {   
-        name:"rony",
+        name:"ensaf",
         birthYear:1679,
         siteName:"google"
     };
 
-//const re=password(obj);
-//console.log(re);
+const resultOfPassword=password(obj);
+console.log("password create result:",resultOfPassword);
 
 
 //problem 05
+
+
 function monthlySavings(paymentArray,fixedCostOfLiving){
     if(Array.isArray(paymentArray)!==true || typeof fixedCostOfLiving!=='number'){
         return "invalid input"
     }
-    let discoutCalculate;
+    let discountCalculate;
     let sum=0;
     let saving;
     for(const elements of paymentArray){
         if(elements>=3000){
-            discoutCalculate=elements*.8;// 20% discount means 80% remain
-            sum=sum+discoutCalculate;
+            discountCalculate=elements*.8;// 20% discount means 80% remain
+            sum=sum+discountCalculate;
         }
         else{
             sum=sum+elements;
@@ -98,9 +113,9 @@ function monthlySavings(paymentArray,fixedCostOfLiving){
         return saving;
     }
     else{
-        return "earn more"
+        return "you have to earn more money"
     }
 
 }
-//const re=monthlySavings(5000,[1000,2000,2500]);
-//console.log(re);
+const resultOfMonthlySaving=monthlySavings(5000,[1000,2000,2500]);
+console.log("result Of Monthly Saving:",resultOfMonthlySaving);
